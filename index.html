@@ -6,35 +6,135 @@
 		<title>LA移动版</title>
 		<link rel="stylesheet" type="text/css" href="css/app.css">
     	<link rel="stylesheet" type="text/css" href="css/style.css">
+    	<script type="text/javascript" src="js/jquery.js"></script>
+    	<script type="text/javascript">
+    		$(function(){
+    			$('.drop').click(function(){
+    				var $this = $(this);
+    				$this.addClass('dropDown');
+    				event.stopPropagation();
+    			});
+    			$('body,.content').click(function(){
+    				if($('.drop').hasClass('dropDown')){
+    					$('.drop').removeClass('dropDown');
+    				}
+    			});
+    		});
+    	</script>
 	</head>
 	<body>
 		<header class="header">
-			<div class="TopL"><a href="#" title="返回" class="BtnIcon Aback"></a></div>
-			<div class="TopM Txthidden">王振佳发起的加班申请</div>
-			<div class="TopR"></div>
+			<div class="TopL"><a href="index.html" title="返回" class="BtnIcon Aback"></a></div>
+			<div class="TopM drop">
+				待审核<em class="BtnIcon arrow"></em>
+				<ul class="ULdrop">
+					<li><a href="#">已批准<em class="prompt">3</em></a></li>
+					<li><a href="#">已审核</a></li>
+				</ul>
+			</div>
+			<div class="TopR"><a href="#" title="添加" class="BtnIcon Add"></a></div>
 		</header>
 		<div class="content">
-			这里是内容哦！
+			<ul class="Formlist">
+                <li>
+                	<a href="Application.html">
+	                    <p><span>王振佳</span>发起的<span>出差申请</span></p>
+	                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                    </a>
+                </li>
+                <li>
+                	<a href="#">
+	                    <p><span>王振佳</span>发起的<span>出差申请</span></p>
+	                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                    </a>
+                </li>
+                <li>
+                	<a href="#">
+	                    <p><span>王振佳</span>发起的<span>出差申请</span></p>
+	                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                    </a>
+                </li>
+			</ul>
+            <ul class="Formlist">
+                <li>
+                    <p><span>刘德华</span>发起的<span>采购申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+                <li>
+                    <p><span>王振佳</span>发起的<span>出差申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+                <li>
+                    <p><span>赵阳</span>发起的<span>请假申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+            </ul>
+            <ul class="Formlist">
+                <li>
+                    <p><span>王振佳</span>发起的<span>出差申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+                <li>
+                    <p><span>刘德华</span>发起的<span>采购申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+                <li>
+                    <p><span>赵阳</span>发起的<span>请假申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+            </ul>
+            <ul class="Formlist">
+                <li>
+                    <p><span>刘德华</span>发起的<span>采购申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+                <li>
+                    <p><span>王振佳</span>发起的<span>出差申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+                <li>
+                    <p><span>赵阳</span>发起的<span>请假申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+            </ul>
+            <ul class="Formlist">
+                <li>
+                    <p><span>王振佳</span>发起的<span>出差申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+                <li>
+                    <p><span>刘德华</span>发起的<span>采购申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+                <li>
+                    <p><span>赵阳</span>发起的<span>请假申请</span></p>
+                    <p><span>CG-2014-0008</span><span>2014-5-15</span></p>
+                </li>
+            </ul>
+            <!--loading begin-->
+            <p class="loading"><img src="img/loading.gif" align="absbottom">加载更多...</p>
+            <!--loading over-->
 		</div>
 		<footer class="footer">
-			<div class="Bthree Btnok">
-				<a href="mine.html">
+			<div class="Bthree Btnmine">
+				<a href="#" class="active">
+                    <span class="prompt">2</span>
 					<em></em>
-					通过
+					我的申请
 				</a>
 			</div>
-			<div class="Bthree Btnno">
+			<div class="Bthree Btnex">
 				<a href="#">
 					<em></em>
-					否决
+					我的审批
 				</a>
 			</div>
-			<div class="Bthree Btnshare">
+			<div class="Bthree Btnth">
 				<a href="#">
 					<em></em>
-					转审
+					我的经办
 				</a>
 			</div>
-		</footer>		
+		</footer>
 	</body>
 </html>
